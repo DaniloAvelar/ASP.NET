@@ -1,7 +1,7 @@
 # ASP.NET
 Estudos e Projetos ASP.NET
 
-Criação de um projeto (API) com nome "ToDo"
+Criação de um projeto (API)
 Criação de Models
 Criação de DbContext
 Criação de DB (SQLite), através do (Migrations)
