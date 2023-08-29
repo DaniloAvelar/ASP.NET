@@ -11,3 +11,7 @@ Repositório responsável por armazenar estudos e projetos em ASP.Net (EF Core) 
 - Metodos (Async e Await)
 - Tratamento de Erros
 - ViewModel
+  {
+    Validações unitárias (Por Controllers)
+    Validações Padrões (Padrão para todos os Controllers)
+  }
