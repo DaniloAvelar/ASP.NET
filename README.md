@@ -15,3 +15,4 @@ Repositório responsável por armazenar estudos e projetos em ASP.Net (EF Core) 
     Validações unitárias (Por Controllers)
     Validações Padrões (Padrão para todos os Controllers)
   }
+- Padronização de BadRequest
