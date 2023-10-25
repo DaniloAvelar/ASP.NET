@@ -1,21 +1,18 @@
 # ASP.NET
 Estudos e Projetos ASP.NET
 
-Criação de um projeto (API)
-Criação de Models
-Criação de DbContext
-Criação de DB (SQLite), através do (Migrations)
-{
-   dotnet ef migrations add CreateDataBase -> para criar a pasta (Migrations) com todas as informações necessarias
-   dotnet ef database update -> Para efetivamente criar o BD (nesse caso SQLite)
-}
+Repositório responsável por armazenar estudos e projetos em ASP.Net (EF Core) e suas respectivas API's de *Estudos*
 
-Criando metodos:
-{
-   Get
-   Post
-   Put
-   Delete
-}
-
-Incremetnando código com *IActionResult*
+**Conteúdo de Estudos**
+- BD - SQLServer
+- Padrão MVC
+- Endpoint (Convensão Global)
+- Versionamento (Url's)
+- Metodos (Async e Await)
+- Tratamento de Erros
+- ViewModel
+  {
+    Validações unitárias (Por Controllers)
+    Validações Padrões (Padrão para todos os Controllers)
+  }
+- Padronização de BadRequest
