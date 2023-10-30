@@ -1,12 +1,14 @@
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
+using JWT.Models;
 using Microsoft.IdentityModel.Tokens;
 
 namespace JWT.Services;
 
 public class TokenService
 {
-    public string Create()
+    public string Create(User user)
     {
         //Instanciando o Token
         var handler = new JwtSecurityTokenHandler();
@@ -27,7 +29,8 @@ public class TokenService
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             SigningCredentials = credentials,
-            Expires = DateTime.UtcNow.AddHours(2)
+            Expires = DateTime.UtcNow.AddHours(2),
+            Subject = GenerateClaims(user)
         };
 
         //(token) recebendo o conteduo correto pronto para uso (Decriptografado)
@@ -35,6 +38,25 @@ public class TokenService
 
         //Retornando uma string contendo o TOKEN
         return handler.WriteToken(token);
+    }
+
+    //Gerando Claims
+    private static ClaimsIdentity GenerateClaims(User user)
+    {
+        var ci = new ClaimsIdentity();
+
+        ci.AddClaim(new Claim("Id", user.Id.ToString()));
+        ci.AddClaim(new Claim(ClaimTypes.Name, user.Name));
+        ci.AddClaim(new Claim(ClaimTypes.Email, user.Email));
+        ci.AddClaim(new Claim(ClaimTypes.GivenName, user.Name));
+        ci.AddClaim(new Claim("Image", user.Image));
+
+        foreach (var role in user.Roles)
+        {
+            ci.AddClaim(new Claim(ClaimTypes.Role, role));
+        }
+
+        return ci;
     }
 
 }
